@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+
+{% block title %}Library{% endblock %}
+
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+
+{% block content %}
+<h1>My Library</h1>
+
+<ul>
+  {% for book in books %}
+    <li>{{ book['title'] }} - {{ book['author'] }} - {{ book['rating'] }}/10</li>
+  {% endfor %}
+</ul>
+
+
+<a href="{{ url_for('add') }}">Add New Book</a>
+{% endblock %}
+
+
+
