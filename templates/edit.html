@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+
+{% block title %}Add Book{% endblock %}
+
+
+
+
+{% block content %}
+<h1>Write New Data</h1>
+<form action="{{ url_for('update')  }}" method="POST">
+    <ul>
+
+        
+        <label>Book Name</label>
+        <input style="width: 300px;" name="title" type="text" value="{{ book_data.title }} ">
+        
+    </ul>
+        
+    <ul>
+
+        <label>Book Author</label>
+        <input style="width: 300px;" name="author" value=" {{ book_data.author }} ">
+        
+    </ul>    
+    
+    <ul>
+
+        <label>Rating</label>
+        <input style="width: 300px;" name="rating" value=" {{ book_data.rating }}  ">
+        
+    </ul>
+    <ul>
+
+        <input type="hidden" style="width: 300px;" name="id" value=" {{ book_data.id }}  ">
+    </ul >
+    <ul>
+        <button>change </button>
+
+    </ul>
+        
+</form>
+
+
+
+
+
+{% endblock %}
