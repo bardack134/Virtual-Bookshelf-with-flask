@@ -11,17 +11,23 @@
 
 
 {% block content %}
-<h1>My Library</h1>
+<h1 class=py-3>My Library</h1>
 
 <ul>
   <!-- bucle for in the book list -->
   {% for book in books %}
-    <li>{{ book['title'] }} - {{ book['author'] }} - {{ book['rating'] }}/10 <a href="{{ url_for('edit', id_number=book['id']) }}">Edit info</a></li>
+  <li class=my-3>
+    <a href="{{ url_for('delete', id_number=book['id']) }}">Delete</a>
+
+    {{ book['title'] }} - {{ book['author'] }} - {{ book['rating'] }}/10
+    
+    <a href="{{ url_for('edit', id_number=book['id']) }}">Edit info</a>
+  </li>
   {% endfor %}
 
   <!-- if the book list is empty -->
   {% if books|length ==0 %}
-    <p>Library is Empty</p>
+  <p>Library is Empty</p>
   {% endif %}
 
 </ul>
@@ -29,6 +35,3 @@
 
 <a href="{{ url_for('add') }}">Add New Book</a>
 {% endblock %}
-
-
-

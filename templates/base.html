@@ -1,26 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     {% block head %}
-     <!-- <link rel="stylesheet" href="style.css" />  -->
+    <!-- <link rel="stylesheet" href="style.css" />  -->
     <title>
         {% block title %}
-        {% endblock %} 
+        {% endblock %}
     </title>
+
+    {% block styles %}
+    <!-- Bootstrap CSS -->
+    {{ bootstrap.load_css() }}
+    {% endblock %}
+
     {% endblock %}
 
 </head>
-<body>
-    <div id="content">
-        {% block content %}
-        {% endblock %}
-    </div>
 
-    <div id="footer">
-        
-        &copy; Copyright 2008 by <a href="http://domain.invalid/">you</a>.
-        
+<body>
+    <section class="full-width-background" style="background-color: #E4C59E;  width: 100%; ">
+
+        <div class="container  col-xxl-8 px-5 py-5 ">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="/static/imgs/books-img.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                        width="700" height="500" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3"> keep track of the books you have read
+                        and give each book a rating</h1>
+                    <p class="lead my-5">Completely free. Track your reading progress, rate and review </p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <!-- <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
+                        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="container col-xxl-8 px-4 py-5" id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </section>
+
+    <div class="container col-xxl-8 px-4 py-5" id="footer">
+
+        &copy; Copyright 2024 by <a href="http://domain.invalid/">you</a>.
+
     </div>
 </body>
+
 </html>
