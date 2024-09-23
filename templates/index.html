@@ -11,27 +11,27 @@
 
 
 {% block content %}
-<h1 class=py-3>My Library</h1>
+<h1 class=py-3>私のライブラリ</h1>
 
 <ul>
   <!-- bucle for in the book list -->
   {% for book in books %}
   <li class=my-3>
-    <a href="{{ url_for('delete', id_number=book['id']) }}">Delete</a>
+    <a href="{{ url_for('delete', id_number=book['id']) }}">削除</a>
 
     {{ book['title'] }} - {{ book['author'] }} - {{ book['rating'] }}/10
     
-    <a href="{{ url_for('edit', id_number=book['id']) }}">Edit info</a>
+    <a href="{{ url_for('edit', id_number=book['id']) }}">情報を編集する</a>
   </li>
   {% endfor %}
 
   <!-- if the book list is empty -->
   {% if books|length ==0 %}
-  <p>Library is Empty</p>
+  <p>ライブラリが空です</p>
   {% endif %}
 
 </ul>
 
 
-<a href="{{ url_for('add') }}">Add New Book</a>
+<a href="{{ url_for('add') }}">新しい本を追加する</a>
 {% endblock %}

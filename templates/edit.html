@@ -8,26 +8,26 @@
 
 
 {% block content %}
-<h1>Write New Data</h1>
+<h1>新しいデータを書き込みます</h1>
 <form action="{{ url_for('update')  }}" method="POST">
     <ul>
 
         
-        <label>Book Name</label>
+        <label>本の名前</label>
         <input style="width: 300px;" name="title" type="text" value="{{ book_data.title }} ">
         
     </ul>
         
     <ul>
 
-        <label>Book Author</label>
+        <label>本の著者</label>
         <input style="width: 300px;" name="author" value=" {{ book_data.author }} ">
         
     </ul>    
     
     <ul>
 
-        <label>Rating</label>
+        <label>評価</label>
         <input style="width: 300px;" name="rating" value=" {{ book_data.rating }}  ">
         
     </ul>
@@ -36,7 +36,7 @@
         <input type="hidden" style="width: 300px;" name="id" value=" {{ book_data.id }}  ">
     </ul >
     <ul>
-        <button>change </button>
+        <button> 変化</button>
 
     </ul>
         
